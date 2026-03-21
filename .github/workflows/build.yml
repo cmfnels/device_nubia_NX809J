@@ -104,7 +104,13 @@ jobs:
             touch out/target/product/NX809J/${dir}/SHARED_LIBRARIES/${lib}_intermediates/${lib}.so.toc
           done
         done
-
+        
+    - name: Fix missing task_profiles
+      run: |
+        cd workspace
+        mkdir -p out/target/product/NX809J/system/etc
+        echo '{}' > out/target/product/NX809J/system/etc/task_profiles.json
+        
     - name: Building TWRP
       run: |
         cd workspace
