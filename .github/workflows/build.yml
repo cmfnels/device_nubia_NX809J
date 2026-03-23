@@ -19,7 +19,7 @@ jobs:
     - name: Set Swap Space
       uses: pierotofy/set-swap-space@master
       with:
-        swap-size-gb: 12
+        swap-size-gb: 24
 
     - name: Install Dependencies
       run: |
@@ -46,8 +46,7 @@ jobs:
         cd workspace
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
-        repo init --depth=1 -u https://github.com/AuroraRecoveryProject/platform_manifest_twrp_aosp.git -b twrp-16.0 || \
-        repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-16.0
+        repo init --depth=1 -u https://github.com/AuroraRecoveryProject/platform_manifest_twrp_aosp.git -b twrp-16.0
 
     - name: Repo Sync
       run: |
@@ -82,7 +81,7 @@ jobs:
         export LC_ALL="C"
         source build/envsetup.sh
         lunch twrp_NX809J
-        make recoveryimage -j$(nproc --all)
+        make recoveryimage -j1
 
     - name: Find recovery image
       run: |
