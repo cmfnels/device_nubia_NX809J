@@ -139,9 +139,18 @@ TW_CUSTOM_VIBRATION_FILE := "/sys/devices/platform/soc/9c0000.qcom,qupv3_i2c_gen
 TARGET_RECOVERY_DEVICE_MODULES += libion
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/libion.so
 
-# SELinux / Security Policy Fixes
+# 1. Space Saving
+BOARD_RAMDISK_USE_LZ4 := false
+BOARD_RAMDISK_USE_LZMA := true
+TW_THEME := portrait_mdpi
+
+# 2. SEPolicy Fixes
+BOARD_SEPOLICY_DIRS += device/nubia/NX809J/sepolicy
 BOARD_VENDOR_SEPOLICY_DIRS += device/nubia/NX809J/sepolicy
 SELINUX_IGNORE_NEVERALLOWS := true
+
+# 3. Accessibility
+TW_EXTRA_LANGUAGES := true
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
