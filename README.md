@@ -9,7 +9,7 @@ Unofficial TWRP recovery for the Nubia Red Magic 11 Pro (NX809J).
 - [x] A/B partition layout confirmed with dedicated recovery partition
 - [x] Vendor blobs extracted (43 files: crypto HALs + dependencies)
 - [x] Touch driver modules included (Synaptics TCM via zte_tpd)
-- [x] Builds successfully via GitHub Actions
+- [ ] Builds successfully via GitHub Actions
 - [ ] Boots to recovery UI
 - [ ] Touch input functional
 - [ ] /data decryption (FBE with wrappedkey_v0)
