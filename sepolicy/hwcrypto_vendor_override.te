@@ -1,0 +1,4 @@
+attribute hal_hwcrypto_server;
+type hal_hwcrypto_default;
+
+typeattribute hal_hwcrypto_default hal_hwcrypto_server;
