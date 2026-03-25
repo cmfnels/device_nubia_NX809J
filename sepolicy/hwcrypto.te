@@ -1,3 +1,8 @@
+type hal_hwcrypto_default;
+
 attribute hal_hwcrypto;
 attribute hal_hwcrypto_server;
 attribute hal_hwcrypto_client;
+
+# Assign the typeattribute
+# typeattribute hal_hwcrypto_default hal_hwcrypto_server;
